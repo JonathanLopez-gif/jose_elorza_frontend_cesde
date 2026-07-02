@@ -1,0 +1,36 @@
+:root {
+    /* ==========================
+     Brand
+  ========================== */
+
+    --brand-primary: oklch(0.56 0.12 259);
+    --brand-secondary: oklch(0.78 0.13 190);
+    --brand-accent: oklch(0.72 0.18 45);
+    --brand-highlight: oklch(0.60 0.21 345);
+
+    /* ==========================
+     Neutral Scale
+  ========================== */
+
+    --neutral-0: oklch(1 0 0);
+
+    --neutral-50: oklch(0.985 0 0);
+    --neutral-100: oklch(0.965 0 0);
+    --neutral-200: oklch(0.925 0 0);
+    --neutral-300: oklch(0.875 0 0);
+    --neutral-400: oklch(0.730 0 0);
+    --neutral-500: oklch(0.560 0 0);
+    --neutral-600: oklch(0.450 0 0);
+    --neutral-700: oklch(0.340 0 0);
+    --neutral-800: oklch(0.240 0 0);
+    --neutral-900: oklch(0.145 0 0);
+
+    /* ==========================
+     Feedback
+  ========================== */
+
+    --success: oklch(0.74 0.13 170);
+    --warning: oklch(0.83 0.16 82);
+    --error: oklch(0.62 0.23 28);
+    --info: oklch(0.64 0.16 245);
+}

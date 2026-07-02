@@ -1,0 +1,59 @@
+:root {
+    /* ==========================
+     Semantic Tokens
+  ========================== */
+
+    --background: var(--neutral-0);
+    --foreground: var(--neutral-900);
+
+    --card: var(--neutral-0);
+    --card-foreground: var(--foreground);
+
+    --popover: var(--neutral-0);
+    --popover-foreground: var(--foreground);
+
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--neutral-0);
+
+    --secondary: var(--brand-secondary);
+    --secondary-foreground: var(--neutral-900);
+
+    --accent: var(--brand-accent);
+    --accent-foreground: var(--neutral-0);
+
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-600);
+
+    --border: var(--neutral-200);
+    --input: var(--neutral-200);
+
+    --ring: var(--brand-primary);
+
+    --destructive: var(--error);
+
+    /* ==========================
+     Sidebar (shadcn)
+  ========================== */
+
+    --sidebar: var(--card);
+    --sidebar-foreground: var(--foreground);
+
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+
+    --sidebar-accent: var(--secondary);
+    --sidebar-accent-foreground: var(--secondary-foreground);
+
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+
+    /* ==========================
+     Charts (shadcn)
+  ========================== */
+
+    --chart-1: var(--brand-primary);
+    --chart-2: var(--brand-secondary);
+    --chart-3: var(--brand-accent);
+    --chart-4: var(--brand-highlight);
+    --chart-5: var(--neutral-500);
+}
