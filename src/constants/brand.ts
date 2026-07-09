@@ -13,4 +13,6 @@ export const BRAND = {
     phone: "+57 311 762 6288",
 
     whatsapp: "+57 311 762 6288",
+
+    copyright: "Todos los derechos reservados.",
 } as const;
