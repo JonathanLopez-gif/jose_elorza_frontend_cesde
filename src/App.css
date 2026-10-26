@@ -1,0 +1,234 @@
+:root {
+  --paper: #f7f5f1;
+  --navy: #1a3a5c;
+  --navy-deep: #142d48;
+  --orange: #e8923a;
+  --teal: #2aa8a8;
+  --text: #1a2a3a;
+  --white: #ffffff;
+  --line: rgba(26, 58, 92, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.landing-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+/* HERO */
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 24px 40px;
+  align-items: center;
+  padding: 36px 0 8px;
+  min-height: min(72vh, 640px);
+}
+
+.hero-copy {
+  max-width: 560px;
+  padding-top: 12px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 5.2vw, 4.35rem);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+}
+
+.hero-copy h1 span {
+  color: var(--orange);
+}
+
+.hero-text {
+  margin-top: 22px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(26, 42, 58, 0.78);
+  max-width: 420px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 28px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--navy-deep);
+}
+
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border-radius: 999px;
+  border: 1.5px solid var(--navy);
+  padding: 0 26px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: transparent;
+}
+
+.outline-button:hover {
+  background: rgba(26, 58, 92, 0.06);
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.hero-art {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 600px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.hero-art__mandala {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* La foto va delante de la mandala. Solo se dimensiona su caja; la imagen no se modifica. */
+.hero-art__photo {
+  position: absolute;
+  z-index: 1;
+  bottom: -1.4%;
+  left: 50%;
+  width: 88%;
+  height: auto;
+  transform: translateX(-52%);
+  user-select: none;
+  /* desvanece el corte inferior de la foto (rodillas) hacia el fondo, como en la referencia */
+  -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+}
+
+/* El aro y la onda exterior se redibujan por encima de la parte baja de la foto (efecto de la referencia). */
+.hero-art__mandala--front {
+  z-index: 2;
+  clip-path: inset(64% 0 0 0);
+  -webkit-mask-image: radial-gradient(circle closest-side, transparent 81%, #000 82%);
+  mask-image: radial-gradient(circle closest-side, transparent 81%, #000 82%);
+}
+
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+  .hero-art {
+    order: -1;
+    width: min(88%, 420px);
+  }
+  .hero-copy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-page {
+    padding-inline: 16px;
+  }
+  .hero-copy h1 {
+    font-size: 2.6rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-buttons > * {
+    width: 100%;
+  }
+}
